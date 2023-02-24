@@ -1,0 +1,225 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="The path to the desktop application." Name="ApplicationPath" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The Ui element that is checked." Name="UiElement" Type="InArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="The match result between colors." Name="Match" Type="OutArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="The selector to the web or desktop application." Name="ApplicationSelector" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The URL to the web application." Name="ApplicationURL" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The file path to the expected image result." Name="ResultFilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1184.9999999999998,2052</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>GetPixelsFromImage.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>GetPixelsFromImage</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftVision.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Uses a given application card and a given ui element from which it takes the screenshot's element pixels, in order to check if they match the given image path's color code and it returns the match result as a boolean. " DisplayName="ImagesColorsMatching Sequence" sap:VirtualizedContainerService.HintSize="684,1987" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="622,103" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Entered MatchImageColorsSelector&quot;]" />
+    <If Condition="[String.IsNullOrEmpty(ApplicationPath)]" DisplayName="If it is an web appplication" sap:VirtualizedContainerService.HintSize="622,1678" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Web Application/Browser" sap:VirtualizedContainerService.HintSize="540,756" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="dd192be1-0dcd-43c4-8bf4-c196f8d1a8f3" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do Web" sap:VirtualizedContainerService.HintSize="506,580" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NCheckState DisplayName="Check App State Given Web Element To Appear" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="444,456" sap2010:WorkflowViewState.IdRef="NCheckState_1" InUiElement="[UiElement]" ScopeIdentifier="dd192be1-0dcd-43c4-8bf4-c196f8d1a8f3" Timeout="30" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Web Target appears" sap:VirtualizedContainerService.HintSize="400,247" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Web CheckColorsMatch.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,123" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CheckColorsMatch.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_UiElement">
+                            <VisualBasicValue x:TypeArguments="ui:UiElement" ExpressionText="UiElement" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Match">
+                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Match" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_ResultFilePath">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ResultFilePath" />
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="1021, 337, 30, 17" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'QQT'" Guid="5d418329-8f94-4920-8f84-7a8ddcf6994f" ImageBase64="" InformativeScreenshot="0448ba2d09fa4a3d361c34b399c59d98.png" NativeTextArgument="QOE" ScopeSelectorArgument="&lt;wnd app='cq32.exe' cls='TMainForm' title='  CrewQual - Pilots ' /&gt;" SearchSteps="TextNative" TargetType="NativeTextBased" Version="V1" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="954, 335, 181, 321" FriendlyName="'TStringGrid'" FullSelectorArgument="&lt;wnd cls='TTabSheet' title='Qualifications' /&gt;&lt;wnd cls='TStringGrid' idx='3' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TTabSheet' title='Qualifications' /&gt;&lt;wnd cls='TStringGrid' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="0, 0, 0, 0" Selector="[ApplicationSelector]" Url="[ApplicationURL]" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </If.Then>
+      <If.Else>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Desktop Application/Browser" sap:VirtualizedContainerService.HintSize="540,756" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="717edc2f-3cdf-4a8b-9c0f-40eb71d6c6ac" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do Desktop" sap:VirtualizedContainerService.HintSize="506,580" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NCheckState DisplayName="Check App State Given Desktop Element To Appear" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="444,456" sap2010:WorkflowViewState.IdRef="NCheckState_2" InUiElement="[UiElement]" ScopeIdentifier="717edc2f-3cdf-4a8b-9c0f-40eb71d6c6ac" Timeout="30" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Desktop Target appears" sap:VirtualizedContainerService.HintSize="400,247" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Desktop CheckColorsMatch.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,123" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CheckColorsMatch.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_UiElement">
+                            <VisualBasicValue x:TypeArguments="ui:UiElement" ExpressionText="UiElement" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Match">
+                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Match" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_ResultFilePath">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ResultFilePath" />
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="1021, 337, 30, 17" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'QQT'" Guid="5d418329-8f94-4920-8f84-7a8ddcf6994f" ImageBase64="" InformativeScreenshot="0448ba2d09fa4a3d361c34b399c59d98.png" NativeTextArgument="QOE" ScopeSelectorArgument="&lt;wnd app='cq32.exe' cls='TMainForm' title='  CrewQual - Pilots ' /&gt;" SearchSteps="TextNative" TargetType="NativeTextBased" Version="V1" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="954, 335, 181, 321" FriendlyName="'TStringGrid'" FullSelectorArgument="&lt;wnd cls='TTabSheet' title='Qualifications' /&gt;&lt;wnd cls='TStringGrid' idx='3' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TTabSheet' title='Qualifications' /&gt;&lt;wnd cls='TStringGrid' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="0, 0, 0, 0" FilePath="[ApplicationPath]" Selector="[ApplicationSelector]" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
