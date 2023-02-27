@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/BE+DHz61WF061Md97AuC1tKVfZVF252+YqMvn6NNAVt36Ks5ha0kvMKXMyYm7O7b08cWJG5w90ixVuvUaaRMQ==",
+  "dgSpecHash": "Mee62TF+lxO/ghQdrtd1K3AhAFj2WWlabiAOLKyjS4pqqMc8SFzx75cX4cV53zSdW0rW945jEOI5kTziRR9o3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\ImagesColorsMatching\\.local\\",
+  "projectFilePath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\AuthorProjects\\ImagesColorsMatching\\Windows\\ImagesColorsMatching\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\laura.olaru\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "C:\\Users\\laura.olaru\\.nuget\\packages\\markdig.signed\\0.21.1\\markdig.signed.0.21.1.nupkg.sha512",

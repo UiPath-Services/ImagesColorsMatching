@@ -16949,9 +16949,9 @@
     "restore": {
       "projectUniqueName": "ImagesColorsMatching",
       "projectName": "ImagesColorsMatching",
-      "projectPath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\ImagesColorsMatching\\.local",
+      "projectPath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\AuthorProjects\\ImagesColorsMatching\\Windows\\ImagesColorsMatching\\.local",
       "packagesPath": "C:\\Users\\laura.olaru\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\ImagesColorsMatching\\.local"
+      "outputPath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\AuthorProjects\\ImagesColorsMatching\\Windows\\ImagesColorsMatching\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
