@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Mee62TF+lxO/ghQdrtd1K3AhAFj2WWlabiAOLKyjS4pqqMc8SFzx75cX4cV53zSdW0rW945jEOI5kTziRR9o3A==",
+  "dgSpecHash": "jZSrfO+/5LRce47tQTBX5orMw0/lPNaM2s/CwnMHngqGHjvkhm1DNFy7c6zjByb/e7yo2J2ZEjS/NYCQzcIPQQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\AuthorProjects\\ImagesColorsMatching\\Windows\\ImagesColorsMatching\\.local\\",
   "expectedPackageFiles": [
@@ -234,7 +234,7 @@
     "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
     "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.uiautomation.activities\\22.10.5\\uipath.uiautomation.activities.22.10.5.nupkg.sha512",
     "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.vision\\3.6.0\\uipath.vision.3.6.0.nupkg.sha512",
-    "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\1.1.1\\uipathteam.imageactivities.activities.1.1.1.nupkg.sha512"
+    "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1\\uipathteam.imageactivities.activities.3.1.1.nupkg.sha512"
   ],
   "logs": []
 }

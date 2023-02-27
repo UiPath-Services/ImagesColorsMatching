@@ -124,12 +124,12 @@
     {
       "Package": {
         "Id": "UiPathTeam.ImageActivities.Activities",
-        "Version": "1.1.1"
+        "Version": "3.1.1"
       },
       "Assemblies": [
-        "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\1.1.1\\lib/net6.0-windows7.0/ImageActivities.dll"
+        "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1\\lib/net6.0-windows7.0/ImageActivities.dll"
       ],
-      "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\1.1.1"
+      "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1"
     }
   ],
   "Conflicts": [],
@@ -3914,7 +3914,7 @@
     },
     "UiPathTeam.ImageActivities.Activities": {
       "Id": "UiPathTeam.ImageActivities.Activities",
-      "Version": "1.1.1",
+      "Version": "3.1.1",
       "Dependencies": []
     }
   },
@@ -5810,12 +5810,12 @@
     {
       "Package": {
         "Id": "UiPathTeam.ImageActivities.Activities",
-        "Version": "1.1.1"
+        "Version": "3.1.1"
       },
       "Assemblies": [
-        "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\1.1.1\\lib\\net6.0-windows7.0\\ImageActivities.dll"
+        "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1\\lib\\net6.0-windows7.0\\ImageActivities.dll"
       ],
-      "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\1.1.1"
+      "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1"
     }
   ]
 }

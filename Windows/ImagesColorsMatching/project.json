@@ -5,13 +5,13 @@
   "dependencies": {
     "UiPath.System.Activities": "22.10.4",
     "UiPath.UIAutomation.Activities": "22.10.5",
-    "UiPathTeam.ImageActivities.Activities": "1.1.1"
+    "UiPathTeam.ImageActivities.Activities": "3.1.1"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.3.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.2-alpha",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

@@ -4121,7 +4121,7 @@
           "lib/net6.0-windows7.0/UiPath.Vision.dll": {}
         }
       },
-      "UiPathTeam.ImageActivities.Activities/1.1.1": {
+      "UiPathTeam.ImageActivities.Activities/3.1.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows7.0/_._": {}
@@ -8107,7 +8107,7 @@
           "lib/net6.0-windows7.0/UiPath.Vision.dll": {}
         }
       },
-      "UiPathTeam.ImageActivities.Activities/1.1.1": {
+      "UiPathTeam.ImageActivities.Activities/3.1.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows7.0/_._": {}
@@ -16919,17 +16919,17 @@
         "uipath.vision.nuspec"
       ]
     },
-    "UiPathTeam.ImageActivities.Activities/1.1.1": {
-      "sha512": "m5ZOgI92lip4KKUXKgjqUEGI1c8dX+/WHn0KnEkWvEQ/Z+2N27Hzb3RQH6Sqr68j8hpxYfnVAWc4SbxHTuqhTQ==",
+    "UiPathTeam.ImageActivities.Activities/3.1.1": {
+      "sha512": "6kr79Hqqk0DsiQ85/eY+ZO9bBeamnv+ehqZSUbw1dkr7RoRV/q7n6t68qGIgg1AwziKS4uaVFo3QRzUYOqKcnA==",
       "type": "package",
-      "path": "uipathteam.imageactivities.activities/1.1.1",
+      "path": "uipathteam.imageactivities.activities/3.1.1",
       "files": [
         ".nupkg.metadata",
         "lib/net461/ImageActivities.dll",
         "lib/net461/System.Drawing.Common.dll",
         "lib/net461/System.Drawing.Primitives.dll",
         "lib/net6.0-windows7.0/ImageActivities.dll",
-        "uipathteam.imageactivities.activities.1.1.1.nupkg.sha512",
+        "uipathteam.imageactivities.activities.3.1.1.nupkg.sha512",
         "uipathteam.imageactivities.activities.nuspec"
       ]
     }
@@ -16939,7 +16939,7 @@
     "net6.0-windows7.0": [
       "UiPath.System.Activities >= 22.10.4 <= 22.10.4",
       "UiPath.UIAutomation.Activities >= 22.10.5 <= 22.10.5",
-      "UiPathTeam.ImageActivities.Activities >= 1.1.1 <= 1.1.1"
+      "UiPathTeam.ImageActivities.Activities >= 3.1.1 <= 3.1.1"
     ]
   },
   "packageFolders": {
@@ -16969,7 +16969,7 @@
           "UiPathTeam.ImageActivities.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.1.1, 1.1.1]"
+            "version": "[3.1.1, 3.1.1]"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Users\\laura.olaru\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
