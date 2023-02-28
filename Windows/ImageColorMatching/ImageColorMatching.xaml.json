@@ -17,32 +17,10 @@
       "DataSourceItems": null
     },
     {
-      "Name": "ApplicationSelector",
-      "DisplayName": "ApplicationSelector",
-      "Category": null,
-      "Tooltip": "The selector to the web or desktop application.",
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "DataSourceItems": null
-    },
-    {
       "Name": "UiElement",
       "DisplayName": "UiElement",
       "Category": null,
-      "Tooltip": "The Ui element that needs to match.",
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "DataSourceItems": null
-    },
-    {
-      "Name": "ExpectedImageFilePath",
-      "DisplayName": "ExpectedImageFilePath",
-      "Category": null,
-      "Tooltip": "The file path to the expected image result.",
+      "Tooltip": "The Ui element that needs to match the expected image",
       "Placeholder": null,
       "Widget": null,
       "IsRequired": false,
@@ -54,6 +32,28 @@
       "DisplayName": "MatchResult",
       "Category": null,
       "Tooltip": "The match result between the ui element and the expected image.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "ApplicationSelector",
+      "DisplayName": "ApplicationSelector",
+      "Category": null,
+      "Tooltip": "The selector to the web or desktop application.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "ExpectedImageFilePath",
+      "DisplayName": "ExpectedImageFilePath",
+      "Category": null,
+      "Tooltip": "The file path to the expected image result.",
       "Placeholder": null,
       "Widget": null,
       "IsRequired": false,

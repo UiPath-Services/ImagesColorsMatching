@@ -120,16 +120,6 @@
         "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.vision\\3.6.0\\lib/net6.0-windows7.0/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.uiautomation.activities\\22.10.5"
-    },
-    {
-      "Package": {
-        "Id": "UiPathTeam.ImageActivities.Activities",
-        "Version": "3.1.1"
-      },
-      "Assemblies": [
-        "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1\\lib/net6.0-windows7.0/ImageActivities.dll"
-      ],
-      "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1"
     }
   ],
   "Conflicts": [],
@@ -3911,11 +3901,6 @@
           "Item2": "[2.13.0, )"
         }
       ]
-    },
-    "UiPathTeam.ImageActivities.Activities": {
-      "Id": "UiPathTeam.ImageActivities.Activities",
-      "Version": "3.1.1",
-      "Dependencies": []
     }
   },
   "AllPackages": [
@@ -5806,16 +5791,6 @@
         "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.vision\\3.6.0\\lib\\net6.0-windows7.0\\UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.vision\\3.6.0"
-    },
-    {
-      "Package": {
-        "Id": "UiPathTeam.ImageActivities.Activities",
-        "Version": "3.1.1"
-      },
-      "Assemblies": [
-        "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1\\lib\\net6.0-windows7.0\\ImageActivities.dll"
-      ],
-      "Path": "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1"
     }
   ]
 }

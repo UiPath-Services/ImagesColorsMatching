@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jZSrfO+/5LRce47tQTBX5orMw0/lPNaM2s/CwnMHngqGHjvkhm1DNFy7c6zjByb/e7yo2J2ZEjS/NYCQzcIPQQ==",
+  "dgSpecHash": "hp13khzYSkt5bJSskp4rSRFpqnUpDwSKhRRYQgA90+/0F1GN1dmEmZUTw7YV/8rNGFKMr22uoablMAtUneNeHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\AuthorProjects\\ImagesColorsMatching\\Windows\\ImagesColorsMatching\\.local\\",
+  "projectFilePath": "C:\\Users\\laura.olaru\\Documents\\UiPath\\ImagesColorsMatching\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\laura.olaru\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "C:\\Users\\laura.olaru\\.nuget\\packages\\markdig.signed\\0.21.1\\markdig.signed.0.21.1.nupkg.sha512",
@@ -233,8 +233,7 @@
     "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.system.activities\\22.10.4\\uipath.system.activities.22.10.4.nupkg.sha512",
     "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
     "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.uiautomation.activities\\22.10.5\\uipath.uiautomation.activities.22.10.5.nupkg.sha512",
-    "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.vision\\3.6.0\\uipath.vision.3.6.0.nupkg.sha512",
-    "C:\\Users\\laura.olaru\\.nuget\\packages\\uipathteam.imageactivities.activities\\3.1.1\\uipathteam.imageactivities.activities.3.1.1.nupkg.sha512"
+    "C:\\Users\\laura.olaru\\.nuget\\packages\\uipath.vision\\3.6.0\\uipath.vision.3.6.0.nupkg.sha512"
   ],
   "logs": []
 }

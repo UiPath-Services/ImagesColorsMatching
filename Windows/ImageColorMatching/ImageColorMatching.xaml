@@ -1,10 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="The path to the desktop application." Name="ApplicationPath" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The path to the web or desktop application." Name="ApplicationPath" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="The selector to the web or desktop application." Name="ApplicationSelector" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="The Ui element that is checked." Name="UiElement" Type="InArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="The Ui element that needs to match the expected image" Name="UiElement" Type="InArgument(ui:UiElement)" />
     <x:Property sap2010:Annotation.AnnotationText="The file path to the expected image result." Name="ExpectedImageFilePath" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="The match result between colors." Name="MatchResult" Type="OutArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="The match result between the ui element and the expected image." Name="MatchResult" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -13,7 +13,7 @@
   <sap:VirtualizedContainerService.HintSize>674,2037</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="35">
+    <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -49,10 +49,11 @@
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>ImagesColorsMatching</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="98">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -101,8 +102,9 @@
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>ImagesColorsMatching</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Uses a given application card and a given ui element from which it takes the screenshot's element pixels, in order to check if they match the given image path's color code and it returns the match result as a boolean. " DisplayName="ImagesColorsMatching Sequence" sap:VirtualizedContainerService.HintSize="684,1972" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
@@ -111,7 +113,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="622,101" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Entered MatchImageColorsSelector&quot;]" />
+    <ui:LogMessage DisplayName="Log Message in ImageColorMatching" sap:VirtualizedContainerService.HintSize="622,101" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Entered MatchImageColorsSelector&quot;]" />
     <If Condition="[ApplicationPath.Contains(&quot;http&quot;)]" DisplayName="If it is an web appplication" sap:VirtualizedContainerService.HintSize="622,1667" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Web Application/Browser" sap:VirtualizedContainerService.HintSize="540,752" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="dd192be1-0dcd-43c4-8bf4-c196f8d1a8f3" Version="V2">

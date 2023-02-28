@@ -1,13 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CheckColorsMatch" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uia="clr-namespace:UiPathTeam.Image.Actions;assembly=ImageActivities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckColorsMatch" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="The given Ui element." Name="in_UiElement" Type="InArgument(ui:UiElement)" />
     <x:Property sap2010:Annotation.AnnotationText="The match result between colors." Name="out_Match" Type="OutArgument(x:Boolean)" />
     <x:Property sap2010:Annotation.AnnotationText="The file path to the expected image result." Name="in_ResultFilePath" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1099,2050</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1097,1735</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="64">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System</x:String>
@@ -87,10 +87,16 @@
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>ImageActivities</AssemblyReference>
+      <AssemblyReference>System.Activities.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Checks if the ui element's color pixels match the given color code and it returns the match result as a boolean. " DisplayName="CheckColorsMatch Sequence" sap:VirtualizedContainerService.HintSize="544,1985" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="Checks if the ui element's color pixels match the given color code and it returns the match result as a boolean. " DisplayName="CheckColorsMatch Sequence" sap:VirtualizedContainerService.HintSize="544,1670" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The file path to the ui element's screenshot." Name="FilePath" />
       <Variable x:TypeArguments="s:Byte[]" sap2010:Annotation.AnnotationText="The average color of the image." Name="AverageColor" />
@@ -104,9 +110,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="482,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Entered CheckColorsMatch&quot;]" />
-    <uia:ImageAverageColor InputImage="{x:Null}" AverageRGBColor="[ResultAverageColor]" DisplayName="Expected Result Image average color" sap:VirtualizedContainerService.HintSize="482,160" sap2010:WorkflowViewState.IdRef="ImageAverageColor_2" ImagePath="[in_ResultFilePath]" />
-    <Assign sap:VirtualizedContainerService.HintSize="482,70" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:LogMessage DisplayName="Log Message in CheckColorsMatch" sap:VirtualizedContainerService.HintSize="482,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Entered CheckColorsMatch&quot;]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Bitmap origImag = (Bitmap)System.Drawing.Image.FromFile(ImagePath);&#xA;Bitmap image = new Bitmap(1, 1);&#xA;&#xA;using (Graphics graphics = Graphics.FromImage(image))&#xA;{&#xA;graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;&#xA;graphics.DrawImage(origImag, new Rectangle(0, 0, 1, 1));&#xA;}&#xA;Color color = image.GetPixel(0, 0);&#xA;&#xA;AverageRGBColor=new Byte[] { color.R, color.G, color.B };" DisplayName="Get Average Color From Expected Image" sap:VirtualizedContainerService.HintSize="482,174" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="ImagePath">[in_ResultFilePath]</InArgument>
+        <OutArgument x:TypeArguments="s:Byte[]" x:Key="AverageRGBColor">[ResultAverageColor]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <Assign DisplayName="Assign Expected Average Color" sap:VirtualizedContainerService.HintSize="482,70" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:Color">[ExpectedColor]</OutArgument>
       </Assign.To>
@@ -114,23 +125,18 @@
         <InArgument x:TypeArguments="sd:Color">[Color.FromArgb(ResultAverageColor(0), ResultAverageColor(1), ResultAverageColor(2))]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="482,222" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" InUiElement="[in_UiElement]" ScopeIdentifier="e932ff27-acc5-45b3-a364-624842c7dc8c" Version="V3">
+    <uix:NTakeScreenshot DisplayName="Take UiElement Screenshot" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="482,222" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" InUiElement="[in_UiElement]" ScopeIdentifier="e932ff27-acc5-45b3-a364-624842c7dc8c" Version="V3">
       <uix:NTakeScreenshot.SavedTo>
         <OutArgument x:TypeArguments="x:String">[FilePath]</OutArgument>
       </uix:NTakeScreenshot.SavedTo>
     </uix:NTakeScreenshot>
-    <uia:ImageAverageColor InputImage="{x:Null}" AverageRGBColor="[AverageColor]" DisplayName="Image average color" sap:VirtualizedContainerService.HintSize="482,160" sap2010:WorkflowViewState.IdRef="ImageAverageColor_1" ImagePath="[FilePath]" />
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="var imagePath = ImagePath.Get(context);&#xD;&#xA;&#xD;&#xA;Bitmap origImag = (Bitmap)Image.FromFile(imagePath);&#xD;&#xA;Bitmap image = New(1, 1);&#xD;&#xA;&#xD;&#xA;Using (Graphics graphics = Graphics.FromImage(image))&#xD;&#xA;{&#xD;&#xA;graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;&#xD;&#xA;graphics.DrawImage(origImag, New System.Drawing.Rectangle(0, 0, 1, 1));&#xD;&#xA;}&#xD;&#xA;Color color = image.GetPixel(0, 0);&#xD;&#xA;&#xD;&#xA;// Outputs&#xD;&#xA;Return (ctx) =&gt; {&#xD;&#xA;AverageRGBColor.Set(ctx, New Byte[] { color.R, color.G, color.B });&#xD;&#xA;};" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="482,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Bitmap origImag = (Bitmap)System.Drawing.Image.FromFile(ImagePath);&#xA;Bitmap image = new Bitmap(1, 1);&#xA;&#xA;using (Graphics graphics = Graphics.FromImage(image))&#xA;{&#xA;graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;&#xA;graphics.DrawImage(origImag, new Rectangle(0, 0, 1, 1));&#xA;}&#xA;Color color = image.GetPixel(0, 0);&#xA;&#xA;AverageRGBColor=new Byte[] { color.R, color.G, color.B };" DisplayName="Get Average Color From UiElement" sap:VirtualizedContainerService.HintSize="482,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="ImagePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilePath" />
-        </InArgument>
-        <OutArgument x:TypeArguments="s:Byte[]" x:Key="Byte">
-          <VisualBasicReference x:TypeArguments="s:Byte[]" ExpressionText="AverageColor" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="ImagePath">[FilePath]</InArgument>
+        <OutArgument x:TypeArguments="s:Byte[]" x:Key="AverageRGBColor">[AverageColor]</OutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <Assign sap:VirtualizedContainerService.HintSize="482,70" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Assign Given Average Color" sap:VirtualizedContainerService.HintSize="482,70" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:Color">[GivenColor]</OutArgument>
       </Assign.To>
@@ -157,6 +163,5 @@
         </Sequence>
       </If.Then>
     </If>
-    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="482,89" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[FilePath]" />
   </Sequence>
 </Activity>
