@@ -1,0 +1,64 @@
+﻿{
+  "DisplayName": "ImageColorMatching",
+  "Tooltip": "Uses a given application card and a given ui element from which it takes the screenshot's element pixels, in order to check if they match the given image path's color code and it returns the match result as a boolean. ",
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "ApplicationPath",
+      "DisplayName": "ApplicationPath",
+      "Category": null,
+      "Tooltip": "The path to the web or desktop application.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "ApplicationSelector",
+      "DisplayName": "ApplicationSelector",
+      "Category": null,
+      "Tooltip": "The selector to the web or desktop application.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "UiElement",
+      "DisplayName": "UiElement",
+      "Category": null,
+      "Tooltip": "The Ui element that needs to match.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "ExpectedImageFilePath",
+      "DisplayName": "ExpectedImageFilePath",
+      "Category": null,
+      "Tooltip": "The file path to the expected image result.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "MatchResult",
+      "DisplayName": "MatchResult",
+      "Category": null,
+      "Tooltip": "The match result between the ui element and the expected image.",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "DataSourceItems": null
+    }
+  ]
+}

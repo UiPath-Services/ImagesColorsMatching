@@ -4,7 +4,7 @@
     <x:Property sap2010:Annotation.AnnotationText="The match result between colors." Name="out_Match" Type="OutArgument(x:Boolean)" />
     <x:Property sap2010:Annotation.AnnotationText="The file path to the expected image result." Name="in_ResultFilePath" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1185,1836</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1099,2050</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -43,7 +43,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="43">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="86">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -87,9 +87,10 @@
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>ImageActivities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Checks if the ui element's color pixels match the given color code and it returns the match result as a boolean. " DisplayName="CheckColorsMatch Sequence" sap:VirtualizedContainerService.HintSize="544,1771" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence sap2010:Annotation.AnnotationText="Checks if the ui element's color pixels match the given color code and it returns the match result as a boolean. " DisplayName="CheckColorsMatch Sequence" sap:VirtualizedContainerService.HintSize="544,1985" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The file path to the ui element's screenshot." Name="FilePath" />
       <Variable x:TypeArguments="s:Byte[]" sap2010:Annotation.AnnotationText="The average color of the image." Name="AverageColor" />
@@ -119,6 +120,16 @@
       </uix:NTakeScreenshot.SavedTo>
     </uix:NTakeScreenshot>
     <uia:ImageAverageColor InputImage="{x:Null}" AverageRGBColor="[AverageColor]" DisplayName="Image average color" sap:VirtualizedContainerService.HintSize="482,160" sap2010:WorkflowViewState.IdRef="ImageAverageColor_1" ImagePath="[FilePath]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="var imagePath = ImagePath.Get(context);&#xD;&#xA;&#xD;&#xA;Bitmap origImag = (Bitmap)Image.FromFile(imagePath);&#xD;&#xA;Bitmap image = New(1, 1);&#xD;&#xA;&#xD;&#xA;Using (Graphics graphics = Graphics.FromImage(image))&#xD;&#xA;{&#xD;&#xA;graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;&#xD;&#xA;graphics.DrawImage(origImag, New System.Drawing.Rectangle(0, 0, 1, 1));&#xD;&#xA;}&#xD;&#xA;Color color = image.GetPixel(0, 0);&#xD;&#xA;&#xD;&#xA;// Outputs&#xD;&#xA;Return (ctx) =&gt; {&#xD;&#xA;AverageRGBColor.Set(ctx, New Byte[] { color.R, color.G, color.B });&#xD;&#xA;};" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="482,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="ImagePath">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilePath" />
+        </InArgument>
+        <OutArgument x:TypeArguments="s:Byte[]" x:Key="Byte">
+          <VisualBasicReference x:TypeArguments="s:Byte[]" ExpressionText="AverageColor" />
+        </OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
     <Assign sap:VirtualizedContainerService.HintSize="482,70" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:Color">[GivenColor]</OutArgument>
